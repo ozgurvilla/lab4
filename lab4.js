@@ -1,22 +1,27 @@
 // JavaScript Document
 
-window.onload = init;
-//window.addEventListener('load', init);
 
-	function init(e)
+
+	var gallery = {
+	
+	//object literal
+	init: function(e)
+	//function init(e)
 	{
 		// collect all anchor tags inside of nav
 		// add event handler onto each of them
 		var links = document.querySelectorAll('#main a'); 
 		for(var i=0; i< links.length; i++)
 		{
-			links[i].onclick = changePic;
+			links[i].onclick = gallery.changePic;
 		}
 		
 	
-	}
+	},
 	
-	function changePic(e)
+	//object literal
+	changePic: function(e)
+	//function changePic(e)
 	{
 	
 	e.preventDefault();
@@ -30,3 +35,9 @@ window.onload = init;
 	//caption.firstChild.nodeValue = e.target.title;
 
 	}
+	
+	}
+	
+	//window.load = init;
+	window.onload = gallery.init;
+	//window.addEventListener('load', init);
